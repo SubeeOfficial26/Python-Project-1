@@ -8,19 +8,17 @@ class User:
         self.accounts.append(account)
 
     def get_total_balance(self): 
-        return 0
+        # Return sum of all account balances
+        return sum(account.get_balance() for account in self.accounts)
 
     def get_account_count(self):
-        account_count = len(self.accounts) +1
-        return account_count
-
+        return len(self.accounts)
 
     def remove_account(self, account):
-        return "Account"
-
-    def is_valid_email(self,email):
-        return None
-
+        if account in self.accounts:
+            self.accounts.remove(account)
+            return f"Account {account.get_account_type()} removed successfully."
+        return "Account not found."
 
     def __str__(self):
-        return f"{self.name} ({self.email}) - {self.get_account_count()} account(s), Total Balance: ${self.get_total_balance()}"
+        return f"{self.name} ({self.email}) - {self.get_account_count()} account(s), Total Balance: ${self.get_total_balance():.2f}"

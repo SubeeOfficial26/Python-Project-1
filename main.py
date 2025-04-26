@@ -5,7 +5,6 @@ from bank_operator import bank_operator
 
 console = Console()
 
-
 def menu():
     while True:
         console.clear()
@@ -32,17 +31,20 @@ def menu():
         elif choice == '2':
             bank_operator.list_users()
         elif choice == '3':
-            bank_operator.create_account()
+            # Placeholder for create account logic
+            pass
         elif choice == '4':
-            bank_operator.deposit_money()
+            # Placeholder for deposit logic
+            pass
         elif choice == '5':
-            bank_operator.withdraw_money()
+            # Placeholder for withdraw logic
+            pass
         elif choice == '6':
-            bank_operator.view_transactions()
+            # Placeholder for view transactions logic
+            pass
         elif choice == '7':
             console.print("\n👋 Exiting... Thank you for using the Bank System!", style="bold green")
             break
-
 
 if __name__ == "__main__":
     menu()
